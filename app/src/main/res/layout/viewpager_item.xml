@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="obj"
+            type="com.saveo.moviesapp.data.model.Movie" />
+
+        <variable
+            name="listener"
+            type="com.saveo.moviesapp.ui.list.MovieListViewModel" />
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="image"
+            type="android.widget.ImageView" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/pageMarginAndOffset"
+        android:layout_marginRight="@dimen/pageMarginAndOffset"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+    </RelativeLayout>
+</layout>

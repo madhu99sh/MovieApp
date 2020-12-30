@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingTop="@dimen/margin_8"
+        android:background="@color/colorNavoption"
+        android:paddingRight="@dimen/margin_8"
+        android:paddingBottom="@dimen/margin_8">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:background="@drawable/ic_baseline_arrow_back_ios_24" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextViewValueStyleWhite20"
+            android:layout_centerInParent="true"
+            android:text="Movies"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
+    </RelativeLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/actionBar">
+
+        <RelativeLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_300"
+            android:background="@color/colorNavoption"
+            android:padding="@dimen/margin_16">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view"
+                android:layout_width="@dimen/margin_100"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/movie_image"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="w,3:2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:srcCompat="@drawable/ic_launcher_background" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_toRightOf="@+id/card_view"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMovieName"
+                    style="@style/TextViewValueStyleWhite24"
+                    android:text="KGF 2"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/TextViewValueStyleGrey16"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:text="9 | 3:35 mins | 01/01/20" />
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_50"
+                    android:numStars="5"
+                    android:progressTint="@color/grey_100"
+                    android:rating="3"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5" />
+
+                <TextView
+                    style="@style/TextViewValueStyleWhite16"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:text="Reviews 10(Critics) User rating 5000" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/inputDialog_btnOkay"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_16"
+            android:backgroundTint="@color/grey_100"
+            android:layoutDirection="rtl"
+            android:text="Book Now"
+            android:textColor="@color/colorFabButtonBlue"
+            android:textSize="@dimen/text_size_14"
+            app:cornerRadius="@dimen/margin_22"
+            app:layout_anchor="@id/coordinator"
+            app:layout_anchorGravity="bottom|right|end" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <TextView
+        android:id="@+id/header"
+        style="@style/TextViewValueStyleWhite24"
+        android:layout_below="@+id/coordinator1"
+        android:layout_margin="@dimen/margin_24"
+        android:text="Synopsis"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvMovieDesc"
+        style="@style/TextViewValueStyleWhite16"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="@dimen/margin_24"
+        android:layout_marginTop="@dimen/margin_24"
+        android:layout_marginRight="@dimen/margin_24"/>
+
+</RelativeLayout>
